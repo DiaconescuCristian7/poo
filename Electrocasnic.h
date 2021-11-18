@@ -9,13 +9,14 @@ protected:
     char *marca;
 public:
     Electrocasnic();
-    Electrocasnic(int , char *):Produs();
+    Electrocasnic(char[], int , char *);
     Electrocasnic(const Electrocasnic &): Produs();
     ~Electrocasnic();
     Electrocasnic operator=(const Electrocasnic &);
     char* get_marca();
-    void sett_marca(char*);
-    void afisare2();
+    void set_marca(char*);
+    void afisare();
+    void citire();
 };
 
 #endif // Electrocasnic_h

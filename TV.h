@@ -16,7 +16,9 @@ public:
     void set_diag(double );
     void set_info(char *);
     TV();
-    void afisare3();
+    void afisare ();
+    void sortare();
+    void citire();
 };
 
 #endif // TV

@@ -2,56 +2,65 @@
 #include "Electrocasnic.h"
 
 
-Electrocasnic()
+Electrocasnic::Electrocasnic()
 {
     marca=NULL;
 }
 
-Electrocasnic(int i, char *m):Produs(i)
+Electrocasnic::Electrocasnic(char c, int i, char *m):Produs(c,i)
 {
     marca=NULL;
-    sett_marca(m);
+    set_marca(m);
 }
 
-Electrocasnic(const Electrocasnic &c):Produs(c)
+Electrocasnic::Electrocasnic(const Electrocasnic &c):Produs(c)
 {
     marca=NULL;
-    sett_marca(c.marca);
+    set_marca(c.marca);
 }
 
-~Electrocasnic()
+Electrocasnic::~Electrocasnic()
 {
     delete[] marca;
 }
 
-Electrocasnic operator=(const Electrocasnic &c)
+Electrocasnic::Electrocasnic operator=(const Electrocasnic &c)
 {
     cod=c.cod;
+    //strcpy
     prec=c.pret;
-    sett_marca(c.marca)
+    set_marca(c.marca)
     return *this;
 }
 
-char* get_marca()
+char* Electrocasnic::get_marca()
 {
     return marca;
 }
 
-void sett_marca(char* n)
+void Electrocasnic::set_marca(char* n)
 {
 
     if (marca!=NULL)
         delete[] marca;
     if (n!=NULL)
     {
-        marca=new char[strlen(n)+2];
+        marca=new char[strlen(n)+1];
         strcpy(marca,n);
     }
     else
         marca=NULL;
 }
 
-void afisare2()
-{
-    cout<<marca<<endl;;
+void Electrocasnic::afisare()
+{	Produs::afisare();
+if (marca)
+
+    cout<<marca<<endl;
+}
+
+void Electrocasnic::citire()
+{	
+	Produs::citire();
+	cin.get(marca);
 }

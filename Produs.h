@@ -11,9 +11,11 @@ protected:
 public:
     Produs(){};
     Produs(char [], int );
-    void sett(char [], int);
-    void get();
-    void afisare1();
+    void set(char [], int);
+    char get_cod();
+    int get_pret();
+    void afisare();
+    void citire();
 };
 
 

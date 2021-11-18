@@ -3,29 +3,38 @@
 using namespace std;
 
 Produs(){}
-Produs(char c[],int p):pret(p)
+Produs::Produs char (c[],int p)
 {
     str=new char[(strlen(c))+1];
     strcpy(str,c);
 }
 
-void sett(char c[],int p)
+void Produs::set(char c[],int p)
 {
     pret=p;
-    strcpy(cod[6],c[]);
+    strcpy(cod,c);
 }
 
-void get()
+char Produs::get_cod()
 {
-    return pret,cod[6];
+	return cod;
 }
 
-void afisare1()
+char Produs::get_pret()
 {
-    for (int i=0; i<strlen(cod[]); i++)
-        cout<<cod[i];
+	return pret;
+}
+
+void Produs::afisare()
+{
+    
+    cout<<cod;
     cout<<endl;
     cout<<pret<<endl;
 }
 
-
+void Produs::citire()
+{
+	cin.get(cod);
+	cin>>pret;
+}
